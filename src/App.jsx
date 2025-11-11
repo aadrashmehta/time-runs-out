@@ -1,41 +1,23 @@
 import { useState, useRef } from 'react'
 import Player from './components/Player.jsx';
+import TimerChallenge from './components/TimerChallenge.jsx';
 
 function App() {
-  // const inputValue = useRef();
-  // const [count, setCount] = useState(0);
 
   return (
     <>
+      <header>
+        <h1>The <em>Almost</em> Final Countdown</h1>
+        <p>Stop the timer once you estimate that time is (almost) up</p>
+      </header>
       <Player />
-      <div id="challenge"></div>
-{/* 
-    <div className="card">
-      <button onClick={() => setCount((count) => count > 1 ? count - 1 : 1)} disabled={count < 1 ? true: false}>
-        -
-      </button>
-      <input 
-        type="number" 
-        ref={inputValue} 
-        value={count} 
-        min="1"
-        onChange={(e) => setCount(Number(e.target.value))}
-      />
-      <button onClick={() => setCount((count) => count + 1)}>
-        +
-      </button>
-      <p>
-        {count > 1 &&
-          `Edit <code>src/App.jsx</code> and save to test HMR`}
-        {count <= 1 &&   
-          `Count can't be less than 1`
-        }
-      </p>
-      <button onClick={() => inputValue.current.focus()}>
-        Focus
-      </button>
-    </div>
-*/}
+      <div id="challenges">
+        <TimerChallenge title="Easy" targetTime={1} />
+        <TimerChallenge title="Not Easy" targetTime={5} />
+        <TimerChallenge title="Difficult" targetTime={10} />
+        <TimerChallenge title="Very Hard" targetTime={15} />
+      </div>
+
     </>
   )
 }
